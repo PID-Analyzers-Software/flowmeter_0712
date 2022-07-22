@@ -62,7 +62,7 @@ void SSD1327RunMenuRenderer::render(Menu* menu)
   m_display->drawStr(50, 40, String(selectedGas.getName()).c_str());
   m_display->drawLine(5, 45, 123, 45);
   m_display->setFont(u8g2_font_ncenB24_tr); // choose a suitable font
-  if (sensor_val > 1005) {
+  if (sensor_val > 2005) {
     m_display->drawStr(40, 80, "xxx");
   } else {
     m_display->drawStr(40, 80, String(simpleKalmanFilter.updateEstimate(sensor_val), 1).c_str());
